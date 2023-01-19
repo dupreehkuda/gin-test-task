@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	docker build -t gin-task --build-arg addr=:8083 .
+	docker build -t gin-task .
 
 .PHONY: run
 run:
