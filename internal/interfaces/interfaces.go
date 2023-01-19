@@ -1,6 +1,10 @@
 package interfaces
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+
+	"github.com/dupreehkuda/gin-test-task/internal/models"
+)
 
 type Middleware interface {
 	HeaderReplier(c *gin.Context)
@@ -11,5 +15,5 @@ type Handlers interface {
 }
 
 type Processors interface {
-	TimeMeasurer(year int) (int, error)
+	TimeMeasurer(year int) *models.DaysSubYearResponse
 }

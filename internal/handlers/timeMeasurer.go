@@ -25,13 +25,8 @@ func (h handlers) TimeMeasurer() gin.HandlerFunc {
 			return
 		}
 
-		days, err := h.processor.TimeMeasurer(year)
-		if err != nil {
-			h.logger.Err(err).Msg("Error occurred in call to processor")
-			c.Status(http.StatusInternalServerError)
-			return
-		}
-
+		days := h.processor.TimeMeasurer(year)
+		
 		c.JSON(http.StatusOK, days)
 	}
 }

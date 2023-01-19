@@ -2,6 +2,7 @@ package server
 
 import "github.com/gin-gonic/gin"
 
+// GetRouter returns configured gin router
 func (s server) GetRouter() *gin.Engine {
 	r := gin.New()
 

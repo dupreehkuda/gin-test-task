@@ -63,7 +63,7 @@ func (s server) Run() {
 	<-quit
 	s.logger.Info().Msg("Server shutdown...")
 
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel()
 	if err := srv.Shutdown(ctx); err != nil {
 		s.logger.Fatal().Err(err).Msg("Shutdown error")
@@ -74,5 +74,5 @@ func (s server) Run() {
 		s.logger.Info().Msg("Timeout")
 	}
 
-	s.logger.Info().Msg("Server live")
+	s.logger.Info().Msg("Successful shutdown")
 }
